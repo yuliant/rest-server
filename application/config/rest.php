@@ -1,6 +1,6 @@
 <?php
 
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
 /*
 |--------------------------------------------------------------------------
@@ -44,14 +44,14 @@ $config['rest_default_format'] = 'json';
 |
 */
 $config['rest_supported_formats'] = [
-    'json',
-    'array',
-    'csv',
-    'html',
-    'jsonp',
-    'php',
-    'serialized',
-    'xml',
+  'json',
+  'array',
+  'csv',
+  'html',
+  'jsonp',
+  'php',
+  'serialized',
+  'xml',
 ];
 
 /*
@@ -110,7 +110,7 @@ $config['rest_realm'] = 'REST API';
 |           authorization key
 |
 */
-$config['rest_auth'] = FALSE;
+$config['rest_auth'] = 'basic';
 
 /*
 |--------------------------------------------------------------------------
@@ -126,7 +126,7 @@ $config['rest_auth'] = FALSE;
 | Note: If 'rest_auth' is set to 'session' then change 'auth_source' to the name of the session variable
 |
 */
-$config['auth_source'] = 'ldap';
+$config['auth_source'] = '';
 
 /*
 |--------------------------------------------------------------------------
@@ -211,7 +211,7 @@ $config['auth_library_function'] = '';
 | Array of usernames and passwords for login, if ldap is configured this is ignored
 |
 */
-$config['rest_valid_logins'] = ['admin' => '1234'];
+$config['rest_valid_logins'] = ['admin' => '1234', 'masrizal' => 'yuliant'];
 
 /*
 |--------------------------------------------------------------------------
@@ -324,7 +324,7 @@ $config['rest_keys_table'] = 'keys';
 |   ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 |
 */
-$config['rest_enable_keys'] = FALSE;
+$config['rest_enable_keys'] = TRUE;
 
 /*
 |--------------------------------------------------------------------------
@@ -377,7 +377,7 @@ $config['rest_key_length'] = 40;
 | 2012/06/12. See RFC 6648 specification for more details
 |
 */
-$config['rest_key_name'] = 'X-API-KEY';
+$config['rest_key_name'] = 'YULIANT-KEY';
 
 /*
 |--------------------------------------------------------------------------
@@ -483,11 +483,11 @@ $config['rest_logs_json_params'] = FALSE;
 | To specify the limits within the controller's __construct() method, add per-method
 | limits with:
 |
-|       $this->method['METHOD_NAME']['limit'] = [NUM_REQUESTS_PER_HOUR];
+|       $this->methods['METHOD_NAME']['limit'] = [NUM_REQUESTS_PER_HOUR];
 |
 | See application/controllers/api/example.php for examples
 */
-$config['rest_enable_limits'] = FALSE;
+$config['rest_enable_limits'] = TRUE;
 
 /*
 |--------------------------------------------------------------------------

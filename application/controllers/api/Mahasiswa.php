@@ -13,6 +13,9 @@ class Mahasiswa extends REST_Controller
     {
         parent::__construct();
         $this->load->model('Mahasiswa_model', 'mhs');
+
+        //per key hanya boleh akses method index_get 10 kali per jam
+        $this->methods['index_get']['limit'] = 10;
     }
 
     public function index_get()
